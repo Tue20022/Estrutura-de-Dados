@@ -99,7 +99,6 @@ Lista* remove_fim(Lista* l)
 Lista* remove_valor(Lista* l, int v)
 {
 	Lista* p = l;
-	p->info = v;
 	
 	if(vazia(l))
 	{
@@ -118,6 +117,11 @@ Lista* remove_valor(Lista* l, int v)
 	{
 		cout<<"Não achou o elemento"<< endl;
 		return l;
+	}
+	
+	if(p==l & p==p->prox)
+	{
+		return NULL;
 	}
 	
 	if(p==l && p->info==v) //1° elemento
